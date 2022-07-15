@@ -1,9 +1,12 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { decrement } from '../hooks/counterSlice';
 import CounterBtn from './CounterBtn'
 
 const DecreaseBtn = () => {
+  const dispatch = useDispatch();
   return (
-    <CounterBtn label="-" handle={() => {console.log('Decrease')}} />
+    <CounterBtn label="-" handle={() => dispatch(decrement())} />
   )
 }
 
